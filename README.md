@@ -30,6 +30,7 @@ To reuse the source and pacman cache, and also keep the nvidia driver avaiable,
 we have to use a work-around, which runs a docker container with GPU and do the compiling,
 once done, commit the image. (see http://stackoverflow.com/questions/24312827/is-it-possible-to-mount-a-directory-while-building-from-dockerfile)
 
+    TMPNAME=tmp-archopencv-${MYARCH}-${MYUSER}
     sudo nvidia-docker run --name=${TMPNAME} \
         -i -t \
         --privileged \
