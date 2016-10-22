@@ -52,6 +52,9 @@ USER root
 RUN rm -rf /home/docker/*
 RUN pacman -Sc
 
+# use /usr/local/cuda for cmake's FindCUDA.cmake
+RUN ln -s /opt/cuda /usr/local/cuda
+
 # start the server (goes into the background)
 #CMD /usr/bin/sshd; sleep infinity
 #CMD ["/usr/sbin/init"]
